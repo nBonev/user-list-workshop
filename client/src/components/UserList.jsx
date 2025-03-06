@@ -52,12 +52,12 @@ export default function UserLIst() {
     <section className="card users-container">
         <Search />
 
-        {showCreate && 
+        {showCreate && ( 
             <UserCreate 
                 onClose={closeCreateUserClickHandler}
                 onSave={saveCreateUserClickHandler} 
             />
-        }
+        )}
 
         {userIdInfo && (
             <UserInfo
