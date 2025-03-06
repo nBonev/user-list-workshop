@@ -1,12 +1,14 @@
 import { fromIsoDate } from "../utils/datetimeUtils";
 
 export default function UserListItem({
+  _id,
   firstName,
   lastName,
   email,
   phoneNumber,
   createdAt,
-  imageUrl
+  imageUrl,
+  onInfoClick
 }) {
 
   return (
@@ -22,7 +24,6 @@ export default function UserListItem({
       <td>{lastName}</td>
       <td>{email}</td>
       <td>{phoneNumber}</td>
-      {/* <td>June 28, 2022</td> */}
       <td>{fromIsoDate(createdAt)}</td>
 
       <td className="actions">
@@ -60,7 +61,7 @@ export default function UserListItem({
             ></path>
           </svg>
         </button>
-        <button className="btn info-btn" title="Info">
+        <button className="btn info-btn" title="Info" onClick={() => onInfoClick(_id)}>
           <svg
             aria-hidden="true"
             focusable="false"
